@@ -49,10 +49,10 @@ const promptArguments = {
 }
 
 
-const prompt = args["prompt"] ? (() => { 
+const prompt = (() => { 
     let regexMatch = /\$\{([a-zA-Z0-9\-\_\|]+)\}/gm;
-    let matches = args["prompt"].match(regexMatch);
-    let prompt = args["prompt"];
+    let prompt = args["prompt"] ? args["prompt"] : process.env.DEFAULT_PROMPT!;
+    let matches = prompt.match(regexMatch);
     if (matches !== null) {
         matches.forEach(function (match) {           
             let value = (promptArguments as any)[match.substr(2, match.length - 3)];
@@ -60,8 +60,7 @@ const prompt = args["prompt"] ? (() => {
         })
     }
     return prompt
-})() : `Create a unique and expressive tweet with newlines for going live on twitch using ${twitchChannel} as the channel and ${game} as the game and https://twitch.tv/${twitchChannel} as the channel link. Must be less than 250 characters`
-
+})();
 
 let twitchChannelData: any = undefined;
 
