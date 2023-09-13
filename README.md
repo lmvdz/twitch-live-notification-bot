@@ -67,5 +67,7 @@ DISCORD_CHANNEL_ID=
 # Run
 
 `npm run start -- --game="Rocket League" --mentionEveryone=false`  
+  
 `npm run start -- --game="Rocket League" --giphy="Gamer" --giphyOffset=0 --twitter=Lmvdzande --twitch=Lmvdzande --discord=762072595917963296`  
+  
 `npm run start -- --game="Rocket League" --useGiphy=false --prompt="Create a going live on twitch tweet for the Lmvdzande channel using https://twitch.tv/Lmvdzande as the twich channel url. The game that is being played is Rocket League. The tweet must be less than 250 characters."` 
