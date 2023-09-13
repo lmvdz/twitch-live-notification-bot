@@ -67,11 +67,14 @@ DEFAULT_PROMPT='Create a unique and expressive tweet with newlines for going liv
 
 # Run
 
-> will create a tweet and post in discord if the twitch user defined in the .env file is live
+> will create a tweet and post in discord if the twitch user defined in the .env file is live  
+  
 `npm run start -- --game="Rocket League" --mentionEveryone=false`  
   
 > will create a tweet and post in discord to @everyone on the specified channel using a gif search on "Gamer" 
+  
 `npm run start -- --game="Rocket League" --giphy="Gamer" --giphyOffset=0 --discord=762072595917963296`  
   
-> will create a tweet without a gif and post in discord to @everyone with a custom chatgpt prompt to generate the tweet.
+> will create a tweet without a gif and post in discord to @everyone with a custom chatgpt prompt to generate the tweet.  
+  
 `npm run start -- --game="Rocket League" --useGiphy=false --prompt="Create a going live on twitch tweet for the ${twitch} channel using https://twitch.tv/${twitch} as the twich channel url. The game that is being played is ${game}. The tweet must be less than 250 characters."` 
