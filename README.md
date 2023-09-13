@@ -9,6 +9,18 @@ Adds a gif using GIPHY api
 Sends the tweet to Twitter using API
 Sends an message to discord channel
 
+# Arguments
+
+`--twitch` the twitch channel ( .env optional )
+`--game` the game being played ( required )
+`--useGiphy` should the tweet include a gif ( default: true )
+`--giphy` the gif to search ( default: same as game )
+`--giphyOffset` the offset of the search ( default: 0 )
+`--twitter` the twitter user name ( .env optional )
+`--onlyNotifyIfLive` only post on twitter/discord if live on twitch ( default: true )
+`--discord` the discord channel id to post to ( .env optional )
+`--mentionEveryone` mention @everyone in discord ( default: true )
+
 # Setup
 
 create `.env` file in project root
