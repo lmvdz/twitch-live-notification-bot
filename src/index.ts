@@ -146,8 +146,6 @@ if (twitterUser) {
             if (text.endsWith("\"")) {
                 text = text.substring(0, text.length - 2)
             }
-
-            console.log(text)
     
             let tweetPayload = {
                 text: text
@@ -197,12 +195,11 @@ if (discord) {
                 if (twitchChannelData) {
                     embed.setThumbnail(twitchChannelData.thumbnail_url);
                     embed.addFields(...[
-                        { name: "Game", value: game } as APIEmbedField,
                         { name: "Title", value: twitchChannelData.title } as APIEmbedField,
                         { name: "Viewers", value: twitchChannelData.viewer_count } as APIEmbedField
                     ]);
                 }
-                (client.channels.cache.get(process.env.DISCORD_CHANNEL_ID!) as TextChannel).send({ embeds: [embed] })
+                await (client.channels.cache.get(process.env.DISCORD_CHANNEL_ID!) as TextChannel).send({ embeds: [embed] })
                 console.log(`sent message to discord`)
     
                 await client.destroy()
